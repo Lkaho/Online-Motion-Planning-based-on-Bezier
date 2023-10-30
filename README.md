@@ -15,7 +15,7 @@ In this project, we designed a robust and efficent navigation framework for indo
 
 ## 3. Real World test
 
-- ![real1](/home/kaho/Workspaces/navigation_ws/src/real1.GIF)
+- ![img](https://github.com/Lkaho/Online-Motion-Planning-based-on-Bezier/blob/main/real_world_test1.gif)
 
-- ![real2](/home/kaho/Workspaces/navigation_ws/src/real2.GIF)
+- ![img](https://github.com/Lkaho/Online-Motion-Planning-based-on-Bezier/blob/main/real_world_test2.gif)
 
