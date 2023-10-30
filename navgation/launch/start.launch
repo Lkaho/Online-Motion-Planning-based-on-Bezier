@@ -39,6 +39,7 @@
         <param name="planning/replan_thresh" value="2.0"/>
         <param name="planning/no_replan_thresh" value="2.0"/>
         <param name="planning/arrive_thresh" value="0.1"/>
+        <param name="planning/update_range" value="6.0"/>
         <remap from="map" to="correct_pointcloud"/>
         <remap from="odom" to="RosAria/pose"/>
     </node>
