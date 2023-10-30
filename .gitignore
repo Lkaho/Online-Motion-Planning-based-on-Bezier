@@ -1,7 +1,6 @@
 .idea/
 rosaria/
-driver_commom/
-catkin_simple/
+driver_common/
 navgation/.ccls/
 hokuyo_node/
 catkin_boost_python_buildtool/
