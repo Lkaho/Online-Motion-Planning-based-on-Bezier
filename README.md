@@ -40,7 +40,7 @@ catkin build
 
 ### TurtleBot3 Waffle Simulation
 
-A running example is provided, making use of the Turtlebot3 simulation environment. This example can be used to test elevation mapping, as a starting point for further integration.
+A running example is provided, making use of the Turtlebot3 simulation environment. 
 
 To start with, the Turtlebot3 simulation dependencies need to be installed:
 
