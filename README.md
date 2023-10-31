@@ -28,6 +28,9 @@ In order to install the Navigation Framework, clone the latest version from this
 ```
 cd catkin_workspace/src
 git clone https://github.com/Lkaho/Online-Motion-Planning-based-on-Bezier.git
+cd Online-Motion-Planning-based-on-Bezier
+git submodule init
+git submodule update
 cd ../../
 catkin config --cmake-args -DCMAKE_BUILD_TYPE=Release
 catkin build
