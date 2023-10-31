@@ -12,6 +12,7 @@
 
     <arg name="_is_limit_vel" default=" true"/>
     <arg name="_is_limit_acc" default=" true"/>
+    <param name="use_sim_time" value="true" />
 
     <node pkg="navigation" type="btraj_node" name="btraj_node" output = "screen"  launch-prefix="xterm -e gdb -ex run --args">
         <param name="map/resolution"   value="$(arg map_resolution_)" />
@@ -40,20 +41,20 @@
         <param name="planning/no_replan_thresh" value="2.0"/>
         <param name="planning/arrive_thresh" value="0.1"/>
         <param name="planning/update_range" value="6.0"/>
-        <remap from="map" to="correct_pointcloud"/>
-        <remap from="odom" to="odometry/filtered"/>
+        <!-- <remap from="map" to="correct_pointcloud"/> -->
+        <remap from="odom" to="odom"/>
     </node>
 
     <node pkg="navigation" type="perception_node" name="perception_node" output="log">
-        <remap from="odom" to="odometry/filtered"/>
+        <remap from="odom" to="odom"/>
         <rosparam file="$(find navigation)/config/lidar_undistortion.yaml" command="load"/>
     </node>
 
 
-    <!-- <node pkg="tf" type="static_transform_publisher" name="base_to_laser" args="0.1 0.0 0.05 0.0 0.0 0.0 base_link laser 100"/> -->
+    <node pkg="tf" type="static_transform_publisher" name="base_to_laser" args="0.0 0.0 0.0 0.0 0.0 0.0 base_footprint base_scan 1000"/>
 
-    <include file="$(find controller)/launch/controller.launch"/>
-    <include file="$(find gmapping)/launch/slam_test.launch"/>
+    <include file="$(find controller)/launch/controller_sim.launch"/>
+    <!-- <include file="$(find gmapping)/launch/slam_test.launch"/> -->
      <node name="rviz" pkg="rviz" type="rviz" output = "screen" args="-d $(find navigation)/launch/xtark_mapping.rviz" />
   
 </launch>
